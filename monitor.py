@@ -92,7 +92,7 @@ def publish_ntfy(topic, title, message, priority="default"):
     response = requests.post(
         "https://ntfy.sh/" + topic,
         data=message.encode("utf-8"),
-        headers={"Title": Header{title, "utf-8").encode(), "Priority": priority, "Tags": "chart_decreasing"},
+        headers={"Title": Header(title, "utf-8").encode(), "Priority": priority, "Tags": "chart_decreasing"},
         timeout=20,
     )
     response.raise_for_status()
