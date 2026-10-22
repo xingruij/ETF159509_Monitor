@@ -1,5 +1,5 @@
 {
-  "threshold_pct": 10.0,
+  "threshold_pct": 25,
   "secid": "0.159509",
   "expected_code": "159509",
   "expected_name_contains": "纳指科技",
