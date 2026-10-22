@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import sys
+from email.header import Header
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -91,7 +92,7 @@ def publish_ntfy(topic, title, message, priority="default"):
     response = requests.post(
         "https://ntfy.sh/" + topic,
         data=message.encode("utf-8"),
-        headers={"Title": title, "Priority": priority, "Tags": "chart_decreasing"},
+        headers={"Title": Header{title, "utf-8").encode(), "Priority": priority, "Tags": "chart_decreasing"},
         timeout=20,
     )
     response.raise_for_status()
