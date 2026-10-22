@@ -1,0 +1,14 @@
+{
+  "threshold_pct": 10.0,
+  "secid": "0.159509",
+  "expected_code": "159509",
+  "expected_name_contains": "纳指科技",
+  "quote_base_urls": [
+    "https://push2delay.eastmoney.com",
+    "https://push2.eastmoney.com"
+  ],
+  "price_field": "f2",
+  "premium_field": "f402",
+  "premium_sign": -1,
+  "api_timeout_seconds": 15
+}

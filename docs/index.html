@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>159509 溢价率提醒设置</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>景顺纳指科技 ETF（159509）</h1>
+    <p class="sub">GitHub Actions + ntfy 溢价率提醒设置</p>
+    <section class="warning"><strong>安全提示：</strong>网页需要 GitHub Fine-grained PAT 才能更新仓库里的 <code>config.json</code>。Token 仅保存在当前标签页内存，不会写入网页存储；刷新页面即清除。只授予单个仓库的 Contents 读写权限，保存后建议撤销 Token。不要在公用设备上使用。</section>
+    <form id="settings-form">
+      <label>GitHub 用户名 / 组织名<input id="owner" autocomplete="off" required placeholder="例如 octocat"></label>
+      <label>仓库名<input id="repo" autocomplete="off" required placeholder="例如 etf159509-monitor"></label>
+      <label>分支<input id="branch" autocomplete="off" required value="main"></label>
+      <label>溢价率阈值（%）<input id="threshold" type="number" min="-100" max="1000" step="0.01" value="10.00" required></label>
+      <label>Fine-grained Personal Access Token<input id="token" type="password" autocomplete="off" required placeholder="github_pat_…"></label>
+      <button type="submit" id="save">读取当前配置并保存阈值</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section class="note">
+      <h2>使用说明</h2>
+      <ol>
+        <li>仓库需已上传项目文件，且默认分支与上方填写一致。</li>
+        <li>在 GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens 创建 Token；Repository access 只选这个仓库，Repository permissions 只开 Contents: Read and write。</li>
+        <li>保存会更新仓库根目录的 <code>config.json</code>，阈值按百分数填写，例如 <code>10</code> 表示 10%。</li>
+        <li>此页面不会保存 Token。不要把 Token 发给任何人或提交到仓库。</li>
+      </ol>
+    </section>
+    <footer>仅供个人提醒；行情接口可能变化，首次启用前必须按 README 验证字段。GitHub Actions 不是精准定时服务。</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
