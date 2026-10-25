@@ -2,7 +2,12 @@ name: ETF premium monitor
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: "45 1 * * 1-5"
+    - cron: "45 2 * * 1-5"
+    - cron: "30 3 * * 1-5"
+    - cron: "30 5 * * 1-5"
+    - cron: "0 6 * * 1-5"
+    - cron: "50 6 * * 1-5"
   workflow_dispatch:
     inputs:
       diagnostics:
